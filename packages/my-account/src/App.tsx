@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react"
 import { Router, Route, Switch, Redirect } from "wouter"
 
 import Invalid from "#components/composite/Invalid"
+import Login from "#components/composite/Login"
 import MyAccountContainer from "#components/composite/MyAccountContainer"
 import Skeleton from "#components/composite/Skeleton"
 import { appRoutes } from "#data/routes"
@@ -28,7 +29,7 @@ function App(): JSX.Element {
             return isLoading ? (
               <Skeleton />
             ) : !settings.isValid ? (
-              <Invalid />
+              <Login />
             ) : (
               <MyAccountContainer
                 settings={settings}

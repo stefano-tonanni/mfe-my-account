@@ -22,7 +22,10 @@ module.exports = {
           400: "#FFAB2E",
           500: "#F59511",
         },
-        inherit: "inherit"
+        inherit: "inherit",
+        auroflex:{
+          primary: '#384c64'
+        }
       },
       fontSize: {
         xxl: "1.625rem",

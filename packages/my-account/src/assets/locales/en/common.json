@@ -5,11 +5,12 @@
     "retry_error_description": "Try to reload the page",
     "invalid": "This URL is not accessible.",
     "privacy_link": "Privacy",
-    "terms_link": "Terms"
+    "terms_link": "Terms",
+    "login": "Login"
   },
   "input": {
-    "cantBlank" : "Can't be blank",
-    "mustBeValidFormat" : "Must be valid format"
+    "cantBlank": "Can't be blank",
+    "mustBeValidFormat": "Must be valid format"
   },
   "menu": {
     "orders": "Orders",
@@ -24,7 +25,19 @@
     "customerServiceDescription": "Get help from the seller",
     "logout": "Logout",
     "logoutDescription": "Logout from this account",
-    "loggedInAs": "Logged in as:"
+    "loggedInAs": "Logged in as:",
+    "account": "Account",
+    "docs": "Documents",
+    "billing_address": "Billing address",
+    "create_project": "Create project",
+    "my_projects": "My projects",
+    "configuration_guide": "Configurations guide",
+    "personal_projects": "Personal projects",
+    "favourite_projects": "Saved projects",
+    "support": "Support",
+    "economic_area": "Revenue area",
+    "assets": "Assets",
+    "academy": "Academy"
   },
   "header": {
     "title": "My account"
@@ -80,7 +93,7 @@
     "title": "My addresses",
     "edit": "Edit",
     "delete": "Delete",
-    "addNewAddress":"Add new address",
+    "addNewAddress": "Add new address",
     "deleteConfirmation": "Delete your address?",
     "yes": "Yes",
     "no": "No",

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import tw from "twin.macro"
+import { Logo } from "#components/ui/Footer/cl"
 
 export const Sidebar = styled.div`
   ${tw`flex flex-col min-h-full p-5 lg:(p-15 sticky top-8) xl:pl-48`}
@@ -30,4 +31,8 @@ export const Email = styled.span`
 
 export const Nav = styled.nav`
   ${tw`md:(my-8) lg:(my-16)`}
+`
+
+export const FullLogo = styled(Logo)`
+  ${tw`p-0`}
 `

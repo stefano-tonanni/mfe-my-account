@@ -13,16 +13,6 @@ function Footer({ termsUrl, privacyUrl }: Props): JSX.Element {
 
   return (
     <Wrapper>
-      <a
-        target="_blank"
-        href="https://commercelayer.io/"
-        rel="noreferrer"
-        className="group"
-      >
-        <LogoWrapper>
-          powered by <Logo width="135" height="22" />
-        </LogoWrapper>
-      </a>
       {(termsUrl || privacyUrl) && (
         <ListWrapper>
           <ListLink>

@@ -5,16 +5,17 @@
     "retry_error_description": "Prova a ricaricare la pagina",
     "invalid": "Quest'URL non è accessibile.",
     "privacy_link": "Privacy",
-    "terms_link": "Termini"
+    "terms_link": "Termini",
+    "login": "Accedi"
   },
   "input": {
-    "cantBlank" : "Non può essere vuoto",
-    "mustBeValidFormat" : "Deve essere in un formato valido"
+    "cantBlank": "Non può essere vuoto",
+    "mustBeValidFormat": "Deve essere in un formato valido"
   },
   "menu": {
     "orders": "Ordini",
     "ordersDescription": "Visualizza i tuoi ordini effettuati",
-    "addresses": "Indirizzi",
+    "addresses": "Indirizzi spedizione",
     "addressesDescription": "Gestisci i tuoi indirizzi",
     "wallet": "Wallet",
     "walletDescription": "Gestisci i tuoi metodi di pagamento",
@@ -24,10 +25,22 @@
     "customerServiceDescription": "Richiedi aiuto al venditore",
     "logout": "Esci",
     "logoutDescription": "Esci da questo account",
-    "loggedInAs": "Hai effettuato l'accesso come:"
+    "loggedInAs": "Hai effettuato l'accesso come:",
+    "account": "Account",
+    "docs": "Documenti",
+    "billing_address": "Indirizzo fatturazione",
+    "create_project": "Crea progetto",
+    "my_projects": "I miei progetti",
+    "configuration_guide": "Guida alla configurazione",
+    "personal_projects": "Progetti personali",
+    "favourite_projects": "Progetti preferiti",
+    "support": "Support",
+    "economic_area": "Area economica",
+    "assets": "Assets",
+    "academy": "Academy"
   },
   "header": {
-    "title": "My account"
+    "title": "Area personale"
   },
   "orders": {
     "title": "I miei ordini",
@@ -80,7 +93,7 @@
     "title": "I miei indirizzi",
     "edit": "Modifica",
     "delete": "Cancella",
-    "addNewAddress":"Aggiungi un nuovo indirizzo",
+    "addNewAddress": "Aggiungi un nuovo indirizzo",
     "deleteConfirmation": "Cancelli il tuo indirizzo?",
     "yes": "Si",
     "no": "No",

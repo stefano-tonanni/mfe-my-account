@@ -2,7 +2,7 @@ import type { Settings } from "HostedApp"
 import { useContext } from "react"
 import { useRouter, useLocation, useRoute, Link } from "wouter"
 
-import { Wrapper, Icon, TitleWrapper, Title, ComingSoon } from "./styled"
+import { Wrapper, Icon, TitleWrapper, Title, ComingSoon, SubTreeUl} from "./styled"
 
 import { AppContext } from "#providers/AppProvider"
 
@@ -20,29 +20,52 @@ function ComingSoonBadge(): JSX.Element {
 }
 
 function NavLinkButton(props: Props): JSX.Element {
-  const { title, href, icon, comingSoon, onClick } = props
+  const { title, href, icon, comingSoon, onClick, subTree, accessToken, isSubTreeItem} = props
   const router = useRouter()
   const [location] = useLocation()
   const hrefWithoutBase = href.replace(router.base, "").split("?")[0]
   const isCurrentPage = location.indexOf(hrefWithoutBase) >= 0
+  const isSubtree = (typeof subTree != 'undefined')
 
   return (
     <Wrapper
       isCurrentPage={isCurrentPage}
       comingSoon={comingSoon}
       onClick={onClick}
+      isSubtree={isSubtree}
+      isSubTreeItem={isSubTreeItem}
     >
       <Icon comingSoon={comingSoon}>{icon}</Icon>
       <TitleWrapper>
-        <Title>{title}</Title>
+        <Title isSubTree={isSubTreeItem}>{title}</Title>
         {comingSoon && <ComingSoonBadge />}
       </TitleWrapper>
+      {subTree && <SubTree items={subTree} accessToken={accessToken} />}
     </Wrapper>
   )
 }
 
+function SubTree(props: Props): JSX.Element {
+  const { items, accessToken } = props
+  const ctx = useContext(AppContext)
+
+  return (
+      <SubTreeUl>
+      {items.map((item, index) => (
+        <Link
+        key={`${item.subKey}_${index}`}
+        href={`${item.href}?accessToken=${accessToken}`}
+        onClick={() => ctx?.closeMobileMenu()}
+        >
+          <NavLinkButton isSubTreeItem={true} {...item} />
+        </Link>
+      ))}
+      </SubTreeUl>
+  )
+}
+
 function NavLink(props: Props): JSX.Element {
-  const { href, accessToken, comingSoon } = props
+  const { href, accessToken, comingSoon, subTree } = props
 
   const ctx = useContext(AppContext)
 
@@ -52,10 +75,13 @@ function NavLink(props: Props): JSX.Element {
     <Link
       href={`${href}?accessToken=${accessToken}`}
       onClick={() => ctx?.closeMobileMenu()}
-    >
+      >
       <NavLinkButton {...props} />
     </Link>
   )
 }
 
 export default NavLink
+
+
+
