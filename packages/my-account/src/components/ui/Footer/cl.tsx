@@ -4,6 +4,8 @@ interface Props {
   width?: string
   height?: string
   className?: string
+  logoUrl?: string,
+  companyName?: string
 }
 
 export function Logo({ width, height, className }: Props): JSX.Element {

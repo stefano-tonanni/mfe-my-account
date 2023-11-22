@@ -9,12 +9,19 @@ import { Base } from "#components/ui/Base"
 import { FooterWrapper } from "#components/ui/Common/styled"
 import { Container } from "#components/ui/Container"
 import Footer from "#components/ui/Footer"
-import { authentication } from '@commercelayer/js-auth'
 
 
+
+interface User {
+  client_id?: string
+  grant_type?: string
+  password?: string
+  username?: string
+}
 interface Props {
   statusCode?: string
   message?: string
+  user?: User
 }
 
 function Login(props: Props): JSX.Element {
@@ -23,11 +30,13 @@ function Login(props: Props): JSX.Element {
   const [user, setUser] =  useState(props.user)
   const [logged, setLogged] = useState(false)
 
-  const submit = e => {
+  const submit = (e:any) => {
     e.preventDefault()
 
-    user['client_id']='8Y-uu5vTZAYdZqteYg5CGw2FBm1Wn1p0qG4CKZk89lY';
-    user['grant_type']='password';
+    if(user){
+      user.client_id = '8Y-uu5vTZAYdZqteYg5CGw2FBm1Wn1p0qG4CKZk89lY';
+      user.grant_type = 'password';
+    }
 
     console.log('sending in outta space')
     console.log(user)

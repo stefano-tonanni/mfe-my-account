@@ -15,7 +15,8 @@ import {
   BookmarkSimple,
   Coins,
   ArrowFatLinesUp,
-  ChalkboardTeacher
+  ChalkboardTeacher,
+  IconProps
 } from "phosphor-react"
 import { useTranslation } from "react-i18next"
 
@@ -40,10 +41,11 @@ interface Props {
   onClick?: () => void
 }
 
-const iconsProps = {
+const iconsProps:IconProps = {
   className:"w-5 h-5",
   weight:"light"
 }
+
 
 function Navbar({ settings, onClick }: Props): JSX.Element {
   const { t } = useTranslation()
